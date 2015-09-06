@@ -39,9 +39,9 @@ public class Triangle {
 		/*
 		 * Test triangle matrix
 		 */
-		int[][] testTraingle = {{59,0,0,0},{41,73,0,0},{40,52,9,0},{99,1,99,1}};
-		triangle = testTraingle;
-		amountOfLines = 4;
+//		int[][] testTraingle = {{59,0,0,0},{41,73,0,0},{40,52,9,0},{99,1,99,1}};
+//		triangle = testTraingle;
+//		amountOfLines = 4;
 		
 		// Vector to store all sums
 		int[] pathSums = new int[amountOfLines];

@@ -8,8 +8,7 @@ public class ZombieNation {
 		while(true){
 			long attacksPerZombie = (timeInHours%24>=8 && timeInHours%24<22)?2:1;
 			long attackedPersons = zombieCount*attacksPerZombie;			
-			long unsuccesfulAttacks = (timeInHours >= 8)? attackedPersons/3:0;
-			attackedPersons -= unsuccesfulAttacks;
+			long unsuccesfulAttacks = (timeInHours >= 8)? attackedPersons/3:0;			
 			long collapsedHealthyPerson = attackedPersons/5;
 			
 			if(timeInHours==0)
