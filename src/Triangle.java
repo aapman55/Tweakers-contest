@@ -39,9 +39,9 @@ public class Triangle {
 		/*
 		 * Test triangle matrix
 		 */
-		int[][] testTraingle = {{59,0,0},{41,73,0},{40,52,9}};
+		int[][] testTraingle = {{59,0,0,0},{41,73,0,0},{40,52,9,0},{99,1,99,1}};
 		triangle = testTraingle;
-		amountOfLines = 3;
+		amountOfLines = 4;
 		
 		// Vector to store all sums
 		int[] pathSums = new int[amountOfLines];
@@ -61,10 +61,12 @@ public class Triangle {
 				else{
 					goToX = argMax(triangle[j-1][currentX-1], triangle[j-1][currentX])-1;
 				}
-				
+				// The idea was to start outside the triangle on the bottom. So the first step should always be straight up.
 				if (j==amountOfLines){
 					goToX = 0;
 				}
+				// Decide if you move up or up and to the left.
+				// Add the number in the cell you want to go and step into it.
 				currentX += goToX;
 				pathSums[i] += triangle[j-1][currentX];
 			}
