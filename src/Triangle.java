@@ -36,6 +36,13 @@ public class Triangle {
 			}
 		}
 		
+		/*
+		 * Test triangle matrix
+		 */
+		int[][] testTraingle = {{59,0,0},{41,73,0},{40,52,9}};
+		triangle = testTraingle;
+		amountOfLines = 3;
+		
 		// Vector to store all sums
 		int[] pathSums = new int[amountOfLines];
 		int currentX;
@@ -48,22 +55,18 @@ public class Triangle {
 			for(int j = amountOfLines ; j >0 ; --j){
 				// Case for most left
 				if(currentX == 0){
-					goToX = argMax(triangle[j-1][currentX], triangle[j-1][currentX+1]);
-				}
-				// Case for most right
-				else if(currentX == amountOfLines-1){
-					goToX = argMax(triangle[j-1][currentX-1], triangle[j-1][currentX])-1;
+					goToX = 0;
 				}
 				// Normal case
 				else{
-					goToX = argMax(triangle[j-1][currentX-1], triangle[j-1][currentX], triangle[j-1][currentX+1]);
+					goToX = argMax(triangle[j-1][currentX-1], triangle[j-1][currentX])-1;
 				}
 				
 				if (j==amountOfLines){
 					goToX = 0;
 				}
 				currentX += goToX;
-				pathSums[i] += triangle[j-1][currentX];					
+				pathSums[i] += triangle[j-1][currentX];
 			}
 		}
 		
